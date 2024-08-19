@@ -1,0 +1,61 @@
+# imports: https://ontology.unifiedcyberontology.org/owl/1.3.0
+# imports: https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/main/dependencies/prov-o-dl.ttl
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix sh-prov: <http://example.org/shapes/sh-prov/> .
+@prefix uco-owl: <https://ontology.unifiedcyberontology.org/owl/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/shapes/sh-prov>
+	a owl:Ontology ;
+	rdfs:comment "This shapes file should be filled in for classes and properties of interest when the upstream ontology does not provide SHACL shapes."@en ;
+	owl:imports
+		uco-owl:1.3.0 ,
+		<https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/main/dependencies/prov-o-dl.ttl>
+		;
+	.
+
+sh-prov:prov-Activity-disjointWith-prov-Entity-shape
+	a sh:NodeShape ;
+	sh:message "prov:Activity and prov:Entity are disjoint classes."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class prov:Entity ;
+	] ;
+	sh:targetClass prov:Activity ;
+	.
+
+sh-prov:prov-ActivityInfluence-disjointWith-prov-EntityInfluence-shape
+	a sh:NodeShape ;
+	sh:message "prov:ActivityInfluence and prov:EntityInfluence are disjoint classes."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class prov:EntityInfluence ;
+	] ;
+	sh:targetClass prov:ActivityInfluence ;
+	.
+
+sh-prov:prov-Agent-disjointWith-prov-InstantaneousEvent-shape
+	a sh:NodeShape ;
+	sh:message "prov:Agent and prov:InstantaneousEvent are disjoint classes."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class prov:InstantaneousEvent ;
+	] ;
+	sh:targetClass prov:Agent ;
+	.
+
+sh-prov:prov-Entity-disjointWith-prov-InstantaneousEvent-shape
+	a sh:NodeShape ;
+	sh:message "prov:Entity and prov:InstantaneousEvent are disjoint classes."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class prov:InstantaneousEvent ;
+	] ;
+	sh:targetClass prov:Entity ;
+	.
+
