@@ -23,7 +23,8 @@ uco_srcdir := $(top_srcdir)/dependencies/UCO
 RDF_TOOLKIT_JAR := $(uco_srcdir)/lib/rdf-toolkit.jar
 
 all: \
-  catalog-v001.xml
+  catalog-v001.xml \
+  prov-o.ttl
 
 $(RDF_TOOLKIT_JAR):
 	@echo "DEBUG:dependencies/Makefile:top_srcdir=$(top_srcdir)" >&2
@@ -89,6 +90,22 @@ imports-transitive.ttl: \
 	    --output-format turtle \
 	    $^ \
 	    > __$@
+	java -jar $(RDF_TOOLKIT_JAR) \
+	  --inline-blank-nodes \
+	  --source __$@ \
+	  --source-format turtle \
+	  --target _$@ \
+	  --target-format turtle
+	rm __$@
+	mv _$@ $@
+
+prov-o.ttl: \
+  $(RDF_TOOLKIT_JAR) \
+  $(top_srcdir)/.venv.done.log
+	rm -f __$@ _$@
+	wget \
+	  --output-document __$@ \
+	  https://www.w3.org/ns/prov-o
 	java -jar $(RDF_TOOLKIT_JAR) \
 	  --inline-blank-nodes \
 	  --source __$@ \
