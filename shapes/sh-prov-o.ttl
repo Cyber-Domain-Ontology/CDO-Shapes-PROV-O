@@ -85,6 +85,30 @@ sh-prov-o:Entity-disjointWith-InstantaneousEvent-shape
 	sh:targetClass prov:Entity ;
 	.
 
+sh-prov-o:actedOnBehalfOf-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Agent ;
+	sh:targetObjectsOf prov:actedOnBehalfOf ;
+	.
+
+sh-prov-o:actedOnBehalfOf-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Agent ;
+	sh:targetSubjectsOf prov:actedOnBehalfOf ;
+	.
+
+sh-prov-o:activity-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Activity ;
+	sh:targetObjectsOf prov:activity ;
+	.
+
+sh-prov-o:activity-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:ActivityInfluence ;
+	sh:targetSubjectsOf prov:activity ;
+	.
+
 sh-prov-o:agent-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Agent ;
@@ -97,6 +121,71 @@ sh-prov-o:agent-subjects-shape
 	sh:targetSubjectsOf prov:agent ;
 	.
 
+sh-prov-o:alternateOf-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetObjectsOf prov:alternateOf ;
+	.
+
+sh-prov-o:alternateOf-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetSubjectsOf prov:alternateOf ;
+	.
+
+sh-prov-o:atLocation-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Location ;
+	sh:targetObjectsOf prov:atLocation ;
+	.
+
+sh-prov-o:atLocation-subjects-shape
+	a sh:NodeShape ;
+	sh:or (
+		[
+			a sh:NodeShape ;
+			sh:class prov:Activity ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class prov:Agent ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class prov:Entity ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class prov:InstantaneousEvent ;
+		]
+	) ;
+	sh:targetSubjectsOf prov:atLocation ;
+	.
+
+sh-prov-o:atTime-objects-shape
+	a sh:NodeShape ;
+	sh:datatype xsd:dateTime ;
+	sh:targetObjectsOf prov:atTime ;
+	.
+
+sh-prov-o:atTime-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:InstantaneousEvent ;
+	sh:targetSubjectsOf prov:atTime ;
+	.
+
+sh-prov-o:endedAtTime-objects-shape
+	a sh:NodeShape ;
+	sh:datatype xsd:dateTime ;
+	sh:targetObjectsOf prov:endedAtTime ;
+	.
+
+sh-prov-o:endedAtTime-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Activity ;
+	sh:targetSubjectsOf prov:endedAtTime ;
+	.
+
 sh-prov-o:entity-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Entity ;
@@ -107,6 +196,30 @@ sh-prov-o:entity-subjects-shape
 	a sh:NodeShape ;
 	sh:class prov:EntityInfluence ;
 	sh:targetSubjectsOf prov:entity ;
+	.
+
+sh-prov-o:generated-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetObjectsOf prov:generated ;
+	.
+
+sh-prov-o:generated-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Activity ;
+	sh:targetSubjectsOf prov:generated ;
+	.
+
+sh-prov-o:generatedAtTime-objects-shape
+	a sh:NodeShape ;
+	sh:datatype xsd:dateTime ;
+	sh:targetObjectsOf prov:generatedAtTime ;
+	.
+
+sh-prov-o:generatedAtTime-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetSubjectsOf prov:generatedAtTime ;
 	.
 
 sh-prov-o:hadActivity-objects-shape
@@ -137,6 +250,66 @@ sh-prov-o:hadActivity-subjects-shape
 		]
 	) ;
 	sh:targetSubjectsOf prov:hadActivity ;
+	.
+
+sh-prov-o:hadMember-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetObjectsOf prov:hadMember ;
+	.
+
+sh-prov-o:hadMember-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Collection ;
+	sh:targetSubjectsOf prov:hadMember ;
+	.
+
+sh-prov-o:hadPrimarySource-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetObjectsOf prov:hadPrimarySource ;
+	.
+
+sh-prov-o:hadPrimarySource-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetSubjectsOf prov:hadPrimarySource ;
+	.
+
+sh-prov-o:influencer-objects-shape
+	a sh:NodeShape ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf prov:influencer ;
+	.
+
+sh-prov-o:influencer-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Influence ;
+	sh:targetSubjectsOf prov:influencer ;
+	.
+
+sh-prov-o:invalidated-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetObjectsOf prov:invalidated ;
+	.
+
+sh-prov-o:invalidated-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Activity ;
+	sh:targetSubjectsOf prov:invalidated ;
+	.
+
+sh-prov-o:invalidatedAtTime-objects-shape
+	a sh:NodeShape ;
+	sh:datatype xsd:dateTime ;
+	sh:targetObjectsOf prov:invalidatedAtTime ;
+	.
+
+sh-prov-o:invalidatedAtTime-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetSubjectsOf prov:invalidatedAtTime ;
 	.
 
 sh-prov-o:qualifiedEnd-objects-shape
@@ -175,6 +348,42 @@ sh-prov-o:qualifiedInvalidation-subjects-shape
 	sh:targetSubjectsOf prov:qualifiedInvalidation ;
 	.
 
+sh-prov-o:qualifiedPrimarySource-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:PrimarySource ;
+	sh:targetObjectsOf prov:qualifiedPrimarySource ;
+	.
+
+sh-prov-o:qualifiedPrimarySource-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetSubjectsOf prov:qualifiedPrimarySource ;
+	.
+
+sh-prov-o:qualifiedQuotation-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Quotation ;
+	sh:targetObjectsOf prov:qualifiedQuotation ;
+	.
+
+sh-prov-o:qualifiedQuotation-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetSubjectsOf prov:qualifiedQuotation ;
+	.
+
+sh-prov-o:qualifiedRevision-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Revision ;
+	sh:targetObjectsOf prov:qualifiedRevision ;
+	.
+
+sh-prov-o:qualifiedRevision-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetSubjectsOf prov:qualifiedRevision ;
+	.
+
 sh-prov-o:qualifiedStart-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Start ;
@@ -187,6 +396,30 @@ sh-prov-o:qualifiedStart-subjects-shape
 	sh:targetSubjectsOf prov:qualifiedStart ;
 	.
 
+sh-prov-o:specializationOf-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetObjectsOf prov:specializationOf ;
+	.
+
+sh-prov-o:specializationOf-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetSubjectsOf prov:specializationOf ;
+	.
+
+sh-prov-o:startedAtTime-objects-shape
+	a sh:NodeShape ;
+	sh:datatype xsd:dateTime ;
+	sh:targetObjectsOf prov:startedAtTime ;
+	.
+
+sh-prov-o:startedAtTime-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Activity ;
+	sh:targetSubjectsOf prov:startedAtTime ;
+	.
+
 sh-prov-o:used-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Entity ;
@@ -197,6 +430,18 @@ sh-prov-o:used-subjects-shape
 	a sh:NodeShape ;
 	sh:class prov:Activity ;
 	sh:targetSubjectsOf prov:used ;
+	.
+
+sh-prov-o:value-objects-shape
+	a sh:NodeShape ;
+	sh:nodeKind sh:Literal ;
+	sh:targetObjectsOf prov:value ;
+	.
+
+sh-prov-o:value-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetSubjectsOf prov:value ;
 	.
 
 sh-prov-o:wasAssociatedWith-objects-shape
@@ -221,6 +466,129 @@ sh-prov-o:wasAttributedTo-subjects-shape
 	a sh:NodeShape ;
 	sh:class prov:Entity ;
 	sh:targetSubjectsOf prov:wasAttributedTo ;
+	.
+
+sh-prov-o:wasDerivedFrom-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetObjectsOf prov:wasDerivedFrom ;
+	.
+
+sh-prov-o:wasDerivedFrom-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetSubjectsOf prov:wasDerivedFrom ;
+	.
+
+sh-prov-o:wasEndedBy-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetObjectsOf prov:wasEndedBy ;
+	.
+
+sh-prov-o:wasEndedBy-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Activity ;
+	sh:targetSubjectsOf prov:wasEndedBy ;
+	.
+
+sh-prov-o:wasGeneratedBy-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Activity ;
+	sh:targetObjectsOf prov:wasGeneratedBy ;
+	.
+
+sh-prov-o:wasGeneratedBy-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetSubjectsOf prov:wasGeneratedBy ;
+	.
+
+sh-prov-o:wasInfluencedBy-objects-shape
+	a sh:NodeShape ;
+	sh:or (
+		[
+			a sh:NodeShape ;
+			sh:class prov:Activity ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class prov:Agent ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class prov:Entity ;
+		]
+	) ;
+	sh:targetObjectsOf prov:wasInfluencedBy ;
+	.
+
+sh-prov-o:wasInfluencedBy-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "prov:wasInfluencedBy should not be used without also using one of its subproperties."@en ;
+	sh:or (
+		[
+			a sh:NodeShape ;
+			sh:class prov:Activity ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class prov:Agent ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class prov:Entity ;
+		]
+	) ;
+	sh:targetSubjectsOf prov:wasInfluencedBy ;
+	.
+
+sh-prov-o:wasInformedBy-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Activity ;
+	sh:targetObjectsOf prov:wasInformedBy ;
+	.
+
+sh-prov-o:wasInformedBy-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Activity ;
+	sh:targetSubjectsOf prov:wasInformedBy ;
+	.
+
+sh-prov-o:wasInvalidatedBy-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Activity ;
+	sh:targetObjectsOf prov:wasInvalidatedBy ;
+	.
+
+sh-prov-o:wasInvalidatedBy-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetSubjectsOf prov:wasInvalidatedBy ;
+	.
+
+sh-prov-o:wasQuotedFrom-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetObjectsOf prov:wasQuotedFrom ;
+	.
+
+sh-prov-o:wasQuotedFrom-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetSubjectsOf prov:wasQuotedFrom ;
+	.
+
+sh-prov-o:wasRevisionOf-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetObjectsOf prov:wasRevisionOf ;
+	.
+
+sh-prov-o:wasRevisionOf-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetSubjectsOf prov:wasRevisionOf ;
 	.
 
 sh-prov-o:wasStartedBy-objects-shape
