@@ -23,9 +23,25 @@ kb:Activity-259084ee-1443-413a-be5e-19258700c938
 	a prov:Activity ;
 	.
 
+kb:Activity-3a6e56f3-82bf-4845-a3e3-db2629aefcc5
+	a prov:Activity ;
+	.
+
+kb:Activity-c764f492-7f26-4169-8d2f-e7e178988c7a
+	a prov:Activity ;
+	.
+
+kb:Activity-d726cd73-b3f9-4b98-8b80-54e2d57852cc
+	a prov:Activity ;
+	.
+
 kb:Activity-e6c4261d-cc3b-4e37-9e23-00581db63cb0
 	a prov:Activity ;
 	prov:qualifiedStart kb:Start-7025ecf0-2da7-44d5-9a5c-34d973612b00 ;
+	.
+
+kb:Activity-efe0303d-4894-48db-9386-25de485d0ebf
+	a prov:Activity ;
 	.
 
 kb:Activity-fdd6bfe5-9e6c-46c9-8a19-c4fb2cc6886c
@@ -36,10 +52,6 @@ kb:Activity-fdd6bfe5-9e6c-46c9-8a19-c4fb2cc6886c
 kb:Activity-fe9bb476-30f2-4529-913b-f4b4bc05e7d6
 	a prov:Activity ;
 	prov:used kb:Entity-fcb4ebbb-0e0c-4fc8-b9b9-e49b40aa9a67 ;
-	.
-
-kb:ActivityInfluence-2e79a35c-93b0-49ba-adc6-8e0189f40b64
-	a prov:ActivityInfluence ;
 	.
 
 kb:Agent-4cfffba0-49fd-4bd1-a394-080eab9bc9e6
@@ -57,6 +69,25 @@ kb:Agent-a411145a-2e53-4257-b7ac-5d45ebde85f8
 kb:AgentInfluence-23cb2d60-1b4d-4938-bf53-e111e5f06544
 	a prov:AgentInfluence ;
 	prov:agent kb:Agent-a411145a-2e53-4257-b7ac-5d45ebde85f8 ;
+	.
+
+kb:Communication-2e79a35c-93b0-49ba-adc6-8e0189f40b64
+	a prov:Communication ;
+	.
+
+kb:Delegation-11b363d8-3a59-4b41-b6cc-3a74f25bee1a
+	a prov:Delegation ;
+	prov:hadActivity kb:Activity-3a6e56f3-82bf-4845-a3e3-db2629aefcc5 ;
+	.
+
+kb:Derivation-567379e6-cde8-4a47-b900-a41b27873654
+	a prov:Derivation ;
+	prov:hadActivity kb:Activity-d726cd73-b3f9-4b98-8b80-54e2d57852cc ;
+	.
+
+kb:End-2ab5742c-a99b-48c4-b8c8-dd5d757a2410
+	a prov:End ;
+	prov:hadActivity kb:Activity-efe0303d-4894-48db-9386-25de485d0ebf ;
 	.
 
 kb:End-e576a7c7-c9de-49e8-b804-1d7b17194094
@@ -96,6 +127,11 @@ kb:Generation-3b74f860-58a3-429b-b8bb-1db73af3c93b
 
 kb:Invalidation-7de11ce3-82d4-4b73-b897-5a7a9c4c6fa1
 	a prov:Invalidation ;
+	.
+
+kb:Start-024b6c55-9f58-42bf-8ee6-bb5ae63b3b22
+	a prov:Start ;
+	prov:hadActivity kb:Activity-c764f492-7f26-4169-8d2f-e7e178988c7a ;
 	.
 
 kb:Start-7025ecf0-2da7-44d5-9a5c-34d973612b00
