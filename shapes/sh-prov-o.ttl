@@ -319,6 +319,18 @@ sh-prov-o:hadActivity-subjects-shape
 	sh:targetSubjectsOf prov:hadActivity ;
 	.
 
+sh-prov-o:hadGeneration-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Generation ;
+	sh:targetObjectsOf prov:hadGeneration ;
+	.
+
+sh-prov-o:hadGeneration-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Derivation ;
+	sh:targetSubjectsOf prov:hadGeneration ;
+	.
+
 sh-prov-o:hadMember-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Entity ;
@@ -331,6 +343,18 @@ sh-prov-o:hadMember-subjects-shape
 	sh:targetSubjectsOf prov:hadMember ;
 	.
 
+sh-prov-o:hadPlan-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Plan ;
+	sh:targetObjectsOf prov:hadPlan ;
+	.
+
+sh-prov-o:hadPlan-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Association ;
+	sh:targetSubjectsOf prov:hadPlan ;
+	.
+
 sh-prov-o:hadPrimarySource-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Entity ;
@@ -341,6 +365,79 @@ sh-prov-o:hadPrimarySource-subjects-shape
 	a sh:NodeShape ;
 	sh:class prov:Entity ;
 	sh:targetSubjectsOf prov:hadPrimarySource ;
+	.
+
+sh-prov-o:hadRole-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Role ;
+	sh:targetObjectsOf prov:hadRole ;
+	.
+
+sh-prov-o:hadRole-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Influence ;
+	sh:or (
+		[
+			a sh:NodeShape ;
+			sh:class prov:Association ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class prov:InstantaneousEvent ;
+		]
+	) ;
+	sh:targetSubjectsOf prov:hadRole ;
+	.
+
+sh-prov-o:hadUsage-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Usage ;
+	sh:targetObjectsOf prov:hadUsage ;
+	.
+
+sh-prov-o:hadUsage-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Derivation ;
+	sh:targetSubjectsOf prov:hadUsage ;
+	.
+
+sh-prov-o:influenced-objects-shape
+	a sh:NodeShape ;
+	sh:or (
+		[
+			a sh:NodeShape ;
+			sh:class prov:Activity ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class prov:Agent ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class prov:Entity ;
+		]
+	) ;
+	sh:targetObjectsOf prov:influenced ;
+	.
+
+sh-prov-o:influenced-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "prov:influenced should not be used without also using one of its subproperties."@en ;
+	sh:or (
+		[
+			a sh:NodeShape ;
+			sh:class prov:Activity ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class prov:Agent ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class prov:Entity ;
+		]
+	) ;
+	sh:targetSubjectsOf prov:influenced ;
 	.
 
 sh-prov-o:influencer-objects-shape
@@ -379,6 +476,66 @@ sh-prov-o:invalidatedAtTime-subjects-shape
 	sh:targetSubjectsOf prov:invalidatedAtTime ;
 	.
 
+sh-prov-o:qualifiedAssociation-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Association ;
+	sh:targetObjectsOf prov:qualifiedAssociation ;
+	.
+
+sh-prov-o:qualifiedAssociation-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Activity ;
+	sh:targetSubjectsOf prov:qualifiedAssociation ;
+	.
+
+sh-prov-o:qualifiedAttribution-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Attribution ;
+	sh:targetObjectsOf prov:qualifiedAttribution ;
+	.
+
+sh-prov-o:qualifiedAttribution-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetSubjectsOf prov:qualifiedAttribution ;
+	.
+
+sh-prov-o:qualifiedCommunication-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Communication ;
+	sh:targetObjectsOf prov:qualifiedCommunication ;
+	.
+
+sh-prov-o:qualifiedCommunication-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Activity ;
+	sh:targetSubjectsOf prov:qualifiedCommunication ;
+	.
+
+sh-prov-o:qualifiedDelegation-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Delegation ;
+	sh:targetObjectsOf prov:qualifiedDelegation ;
+	.
+
+sh-prov-o:qualifiedDelegation-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Agent ;
+	sh:targetSubjectsOf prov:qualifiedDelegation ;
+	.
+
+sh-prov-o:qualifiedDerivation-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Derivation ;
+	sh:targetObjectsOf prov:qualifiedDerivation ;
+	.
+
+sh-prov-o:qualifiedDerivation-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetSubjectsOf prov:qualifiedDerivation ;
+	.
+
 sh-prov-o:qualifiedEnd-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:End ;
@@ -401,6 +558,31 @@ sh-prov-o:qualifiedGeneration-subjects-shape
 	a sh:NodeShape ;
 	sh:class prov:Entity ;
 	sh:targetSubjectsOf prov:qualifiedGeneration ;
+	.
+
+sh-prov-o:qualifiedInfluence-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Influence ;
+	sh:targetObjectsOf prov:qualifiedInfluence ;
+	.
+
+sh-prov-o:qualifiedInfluence-subjects-shape
+	a sh:NodeShape ;
+	sh:or (
+		[
+			a sh:NodeShape ;
+			sh:class prov:Activity ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class prov:Agent ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class prov:Entity ;
+		]
+	) ;
+	sh:targetSubjectsOf prov:qualifiedInfluence ;
 	.
 
 sh-prov-o:qualifiedInvalidation-objects-shape
@@ -461,6 +643,18 @@ sh-prov-o:qualifiedStart-subjects-shape
 	a sh:NodeShape ;
 	sh:class prov:Activity ;
 	sh:targetSubjectsOf prov:qualifiedStart ;
+	.
+
+sh-prov-o:qualifiedUsage-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Usage ;
+	sh:targetObjectsOf prov:qualifiedUsage ;
+	.
+
+sh-prov-o:qualifiedUsage-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Activity ;
+	sh:targetSubjectsOf prov:qualifiedUsage ;
 	.
 
 sh-prov-o:specializationOf-objects-shape
