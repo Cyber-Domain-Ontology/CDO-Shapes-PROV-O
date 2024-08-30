@@ -19,6 +19,30 @@
 		;
 	.
 
+sh-prov-o:agent-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Agent ;
+	sh:targetObjectsOf prov:agent ;
+	.
+
+sh-prov-o:agent-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:AgentInfluence ;
+	sh:targetSubjectsOf prov:agent ;
+	.
+
+sh-prov-o:entity-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetObjectsOf prov:entity ;
+	.
+
+sh-prov-o:entity-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:EntityInfluence ;
+	sh:targetSubjectsOf prov:entity ;
+	.
+
 sh-prov-o:prov-Activity-disjointWith-prov-Entity-shape
 	a sh:NodeShape ;
 	sh:message "prov:Activity and prov:Entity are disjoint classes."@en ;
@@ -57,5 +81,77 @@ sh-prov-o:prov-Entity-disjointWith-prov-InstantaneousEvent-shape
 		sh:class prov:InstantaneousEvent ;
 	] ;
 	sh:targetClass prov:Entity ;
+	.
+
+sh-prov-o:qualifiedEnd-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:End ;
+	sh:targetObjectsOf prov:qualifiedEnd ;
+	.
+
+sh-prov-o:qualifiedEnd-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Activity ;
+	sh:targetSubjectsOf prov:qualifiedEnd ;
+	.
+
+sh-prov-o:qualifiedGeneration-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Generation ;
+	sh:targetObjectsOf prov:qualifiedGeneration ;
+	.
+
+sh-prov-o:qualifiedGeneration-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetSubjectsOf prov:qualifiedGeneration ;
+	.
+
+sh-prov-o:qualifiedInvalidation-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Invalidation ;
+	sh:targetObjectsOf prov:qualifiedInvalidation ;
+	.
+
+sh-prov-o:qualifiedInvalidation-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetSubjectsOf prov:qualifiedInvalidation ;
+	.
+
+sh-prov-o:qualifiedStart-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Start ;
+	sh:targetObjectsOf prov:qualifiedStart ;
+	.
+
+sh-prov-o:qualifiedStart-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Activity ;
+	sh:targetSubjectsOf prov:qualifiedStart ;
+	.
+
+sh-prov-o:used-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetObjectsOf prov:used ;
+	.
+
+sh-prov-o:used-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Activity ;
+	sh:targetSubjectsOf prov:used ;
+	.
+
+sh-prov-o:wasAssociatedWith-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Agent ;
+	sh:targetObjectsOf prov:wasAssociatedWith ;
+	.
+
+sh-prov-o:wasAssociatedWith-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Activity ;
+	sh:targetSubjectsOf prov:wasAssociatedWith ;
 	.
 

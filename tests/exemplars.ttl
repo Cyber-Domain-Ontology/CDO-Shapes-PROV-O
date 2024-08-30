@@ -14,8 +14,28 @@
 	owl:imports <http://example.org/shapes/sh-prov-o> ;
 	.
 
+kb:Activity-055ad0f6-ac79-426a-9ff4-916d91408abb
+	a prov:Activity ;
+	prov:wasAssociatedWith kb:Agent-8dc1c08a-ce57-42d8-a5a8-5ddb866e1af4 ;
+	.
+
 kb:Activity-259084ee-1443-413a-be5e-19258700c938
 	a prov:Activity ;
+	.
+
+kb:Activity-e6c4261d-cc3b-4e37-9e23-00581db63cb0
+	a prov:Activity ;
+	prov:qualifiedStart kb:Start-7025ecf0-2da7-44d5-9a5c-34d973612b00 ;
+	.
+
+kb:Activity-fdd6bfe5-9e6c-46c9-8a19-c4fb2cc6886c
+	a prov:Activity ;
+	prov:qualifiedEnd kb:End-e576a7c7-c9de-49e8-b804-1d7b17194094 ;
+	.
+
+kb:Activity-fe9bb476-30f2-4529-913b-f4b4bc05e7d6
+	a prov:Activity ;
+	prov:used kb:Entity-fcb4ebbb-0e0c-4fc8-b9b9-e49b40aa9a67 ;
 	.
 
 kb:ActivityInfluence-2e79a35c-93b0-49ba-adc6-8e0189f40b64
@@ -26,7 +46,59 @@ kb:Agent-4cfffba0-49fd-4bd1-a394-080eab9bc9e6
 	a prov:Agent ;
 	.
 
+kb:Agent-8dc1c08a-ce57-42d8-a5a8-5ddb866e1af4
+	a prov:Agent ;
+	.
+
+kb:Agent-a411145a-2e53-4257-b7ac-5d45ebde85f8
+	a prov:Agent ;
+	.
+
+kb:AgentInfluence-23cb2d60-1b4d-4938-bf53-e111e5f06544
+	a prov:AgentInfluence ;
+	prov:agent kb:Agent-a411145a-2e53-4257-b7ac-5d45ebde85f8 ;
+	.
+
+kb:End-e576a7c7-c9de-49e8-b804-1d7b17194094
+	a prov:End ;
+	.
+
+kb:Entity-6d214b7a-a23e-4557-bd30-9967c29248ba
+	a prov:Entity ;
+	prov:qualifiedGeneration kb:Generation-3b74f860-58a3-429b-b8bb-1db73af3c93b ;
+	.
+
 kb:Entity-80e065c3-d2eb-44e3-8766-74c175b92253
 	a prov:Entity ;
+	.
+
+kb:Entity-a2d4e498-411a-4bb2-9afb-745cdc994b01
+	a prov:Entity ;
+	prov:qualifiedInvalidation kb:Invalidation-7de11ce3-82d4-4b73-b897-5a7a9c4c6fa1 ;
+	.
+
+kb:Entity-edbe2219-ebfe-43ad-9cc0-66e9a93754c3
+	a prov:Entity ;
+	.
+
+kb:Entity-fcb4ebbb-0e0c-4fc8-b9b9-e49b40aa9a67
+	a prov:Entity ;
+	.
+
+kb:EntityInfluence-618708b2-bee1-4753-92ac-2505818fc445
+	a prov:EntityInfluence ;
+	prov:entity kb:Entity-edbe2219-ebfe-43ad-9cc0-66e9a93754c3 ;
+	.
+
+kb:Generation-3b74f860-58a3-429b-b8bb-1db73af3c93b
+	a prov:Generation ;
+	.
+
+kb:Invalidation-7de11ce3-82d4-4b73-b897-5a7a9c4c6fa1
+	a prov:Invalidation ;
+	.
+
+kb:Start-7025ecf0-2da7-44d5-9a5c-34d973612b00
+	a prov:Start ;
 	.
 
