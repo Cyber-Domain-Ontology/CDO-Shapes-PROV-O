@@ -75,6 +75,25 @@ sh-prov-o:Agent-disjointWith-InstantaneousEvent-shape
 	sh:targetClass prov:Agent ;
 	.
 
+sh-prov-o:AgentInfluence-shape
+	a sh:NodeShape ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:description "This shape implements a more open-ended subclass review than the enumeration in PROV-O of Assocation, Attribution, Delegation."@en ;
+		sh:hasValue prov:AgentInfluence ;
+		sh:message "It is not recommended that the type AgentInfluence be asserted without also asserting one of its more specific subclasses (e.g., Association, Attribution, Delegation)."@en ;
+		sh:minCount "1"^^xsd:integer ;
+		sh:path (
+			rdf:type
+			[
+				sh:oneOrMorePath rdfs:subClassOf ;
+			]
+		) ;
+		sh:severity sh:Warning ;
+	] ;
+	sh:targetClass prov:AgentInfluence ;
+	.
+
 sh-prov-o:Entity-disjointWith-InstantaneousEvent-shape
 	a sh:NodeShape ;
 	sh:message "prov:Entity and prov:InstantaneousEvent are disjoint classes."@en ;
