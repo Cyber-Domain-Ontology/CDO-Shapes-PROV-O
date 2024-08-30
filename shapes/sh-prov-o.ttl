@@ -94,6 +94,16 @@ sh-prov-o:AgentInfluence-shape
 	sh:targetClass prov:AgentInfluence ;
 	.
 
+sh-prov-o:EmptyCollection-shape
+	a sh:NodeShape ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:path prov:hadMember ;
+	] ;
+	sh:targetClass prov:EmptyCollection ;
+	.
+
 sh-prov-o:Entity-disjointWith-InstantaneousEvent-shape
 	a sh:NodeShape ;
 	sh:message "prov:Entity and prov:InstantaneousEvent are disjoint classes."@en ;

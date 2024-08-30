@@ -192,6 +192,10 @@ kb:Derivation-567379e6-cde8-4a47-b900-a41b27873654
 	prov:hadActivity kb:Activity-d726cd73-b3f9-4b98-8b80-54e2d57852cc ;
 	.
 
+kb:EmptyCollection-32383360-03ef-4391-bcfa-887d676349d4
+	a prov:EmptyCollection ;
+	.
+
 kb:End-2ab5742c-a99b-48c4-b8c8-dd5d757a2410
 	a prov:End ;
 	prov:hadActivity kb:Activity-efe0303d-4894-48db-9386-25de485d0ebf ;
