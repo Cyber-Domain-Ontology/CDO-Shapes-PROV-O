@@ -192,6 +192,11 @@ kb:Derivation-567379e6-cde8-4a47-b900-a41b27873654
 	prov:hadActivity kb:Activity-d726cd73-b3f9-4b98-8b80-54e2d57852cc ;
 	.
 
+kb:Derivation-618708b2-bee1-4753-92ac-2505818fc445
+	a prov:Derivation ;
+	prov:entity kb:Entity-edbe2219-ebfe-43ad-9cc0-66e9a93754c3 ;
+	.
+
 kb:EmptyCollection-32383360-03ef-4391-bcfa-887d676349d4
 	a prov:EmptyCollection ;
 	.
@@ -199,6 +204,11 @@ kb:EmptyCollection-32383360-03ef-4391-bcfa-887d676349d4
 kb:End-2ab5742c-a99b-48c4-b8c8-dd5d757a2410
 	a prov:End ;
 	prov:hadActivity kb:Activity-efe0303d-4894-48db-9386-25de485d0ebf ;
+	.
+
+kb:End-b6722f22-d1f2-4131-8f34-5b71f2063a53
+	a prov:End ;
+	prov:entity kb:Entity-9d0fb4a7-3188-4f65-add5-e020fba7e1d2 ;
 	.
 
 kb:End-e576a7c7-c9de-49e8-b804-1d7b17194094
@@ -260,6 +270,14 @@ kb:Entity-80e065c3-d2eb-44e3-8766-74c175b92253
 	a prov:Entity ;
 	.
 
+kb:Entity-931da65d-356e-4206-9be5-e051b268e4a6
+	a prov:Entity ;
+	.
+
+kb:Entity-9d0fb4a7-3188-4f65-add5-e020fba7e1d2
+	a prov:Entity ;
+	.
+
 kb:Entity-a2d4e498-411a-4bb2-9afb-745cdc994b01
 	a prov:Entity ;
 	prov:qualifiedInvalidation kb:Invalidation-7de11ce3-82d4-4b73-b897-5a7a9c4c6fa1 ;
@@ -307,13 +325,12 @@ kb:Entity-edbe2219-ebfe-43ad-9cc0-66e9a93754c3
 	a prov:Entity ;
 	.
 
-kb:Entity-fcb4ebbb-0e0c-4fc8-b9b9-e49b40aa9a67
+kb:Entity-f79f45be-2688-4f4f-8685-b0bb8bebc99e
 	a prov:Entity ;
 	.
 
-kb:EntityInfluence-618708b2-bee1-4753-92ac-2505818fc445
-	a prov:EntityInfluence ;
-	prov:entity kb:Entity-edbe2219-ebfe-43ad-9cc0-66e9a93754c3 ;
+kb:Entity-fcb4ebbb-0e0c-4fc8-b9b9-e49b40aa9a67
+	a prov:Entity ;
 	.
 
 kb:Generation-206644ad-0d51-41e3-abc2-62accb95dfc4
@@ -377,11 +394,21 @@ kb:Start-024b6c55-9f58-42bf-8ee6-bb5ae63b3b22
 	prov:hadActivity kb:Activity-c764f492-7f26-4169-8d2f-e7e178988c7a ;
 	.
 
+kb:Start-2d92e44c-8d08-404d-9d20-918763d934ac
+	a prov:Start ;
+	prov:entity kb:Entity-931da65d-356e-4206-9be5-e051b268e4a6 ;
+	.
+
 kb:Start-7025ecf0-2da7-44d5-9a5c-34d973612b00
 	a prov:Start ;
 	.
 
 kb:Thing-93559753-d7e7-4386-9f41-8c3b116e765e
 	a owl:Thing ;
+	.
+
+kb:Usage-0f857657-0e9b-4c8c-b682-1a647ff2ea5c
+	a prov:Usage ;
+	prov:entity kb:Entity-f79f45be-2688-4f4f-8685-b0bb8bebc99e ;
 	.
 

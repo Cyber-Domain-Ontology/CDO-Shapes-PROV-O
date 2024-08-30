@@ -114,6 +114,25 @@ sh-prov-o:Entity-disjointWith-InstantaneousEvent-shape
 	sh:targetClass prov:Entity ;
 	.
 
+sh-prov-o:EntityInfluence-shape
+	a sh:NodeShape ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:description "This shape implements a more open-ended subclass review than the enumeration in PROV-O of Derivation, End, Start, Usage."@en ;
+		sh:hasValue prov:EntityInfluence ;
+		sh:message "It is not recommended that the type EntityInfluence be asserted without also asserting one of its more specific subclasses (e.g., Derivation, End, Start, Usage)."@en ;
+		sh:minCount "1"^^xsd:integer ;
+		sh:path (
+			rdf:type
+			[
+				sh:oneOrMorePath rdfs:subClassOf ;
+			]
+		) ;
+		sh:severity sh:Warning ;
+	] ;
+	sh:targetClass prov:EntityInfluence ;
+	.
+
 sh-prov-o:actedOnBehalfOf-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Agent ;
