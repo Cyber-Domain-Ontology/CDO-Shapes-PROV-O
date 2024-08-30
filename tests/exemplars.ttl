@@ -21,6 +21,7 @@ kb:Activity-055ad0f6-ac79-426a-9ff4-916d91408abb
 
 kb:Activity-259084ee-1443-413a-be5e-19258700c938
 	a prov:Activity ;
+	prov:wasStartedBy kb:Entity-80e065c3-d2eb-44e3-8766-74c175b92253 ;
 	.
 
 kb:Activity-3a6e56f3-82bf-4845-a3e3-db2629aefcc5
@@ -106,6 +107,11 @@ kb:Entity-80e065c3-d2eb-44e3-8766-74c175b92253
 kb:Entity-a2d4e498-411a-4bb2-9afb-745cdc994b01
 	a prov:Entity ;
 	prov:qualifiedInvalidation kb:Invalidation-7de11ce3-82d4-4b73-b897-5a7a9c4c6fa1 ;
+	.
+
+kb:Entity-a644ab7a-af35-4d41-a499-15b6c0cc7149
+	a prov:Entity ;
+	prov:wasAttributedTo kb:Agent-4cfffba0-49fd-4bd1-a394-080eab9bc9e6 ;
 	.
 
 kb:Entity-edbe2219-ebfe-43ad-9cc0-66e9a93754c3

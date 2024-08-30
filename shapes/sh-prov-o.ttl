@@ -211,3 +211,27 @@ sh-prov-o:wasAssociatedWith-subjects-shape
 	sh:targetSubjectsOf prov:wasAssociatedWith ;
 	.
 
+sh-prov-o:wasAttributedTo-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Agent ;
+	sh:targetObjectsOf prov:wasAttributedTo ;
+	.
+
+sh-prov-o:wasAttributedTo-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetSubjectsOf prov:wasAttributedTo ;
+	.
+
+sh-prov-o:wasStartedBy-objects-shape
+	a sh:NodeShape ;
+	sh:class prov:Entity ;
+	sh:targetObjectsOf prov:wasStartedBy ;
+	.
+
+sh-prov-o:wasStartedBy-subjects-shape
+	a sh:NodeShape ;
+	sh:class prov:Activity ;
+	sh:targetSubjectsOf prov:wasStartedBy ;
+	.
+
