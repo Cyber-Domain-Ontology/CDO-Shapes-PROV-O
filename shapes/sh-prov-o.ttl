@@ -19,6 +19,46 @@
 		;
 	.
 
+sh-prov-o:Activity-disjointWith-Entity-shape
+	a sh:NodeShape ;
+	sh:message "prov:Activity and prov:Entity are disjoint classes."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class prov:Entity ;
+	] ;
+	sh:targetClass prov:Activity ;
+	.
+
+sh-prov-o:ActivityInfluence-disjointWith-EntityInfluence-shape
+	a sh:NodeShape ;
+	sh:message "prov:ActivityInfluence and prov:EntityInfluence are disjoint classes."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class prov:EntityInfluence ;
+	] ;
+	sh:targetClass prov:ActivityInfluence ;
+	.
+
+sh-prov-o:Agent-disjointWith-InstantaneousEvent-shape
+	a sh:NodeShape ;
+	sh:message "prov:Agent and prov:InstantaneousEvent are disjoint classes."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class prov:InstantaneousEvent ;
+	] ;
+	sh:targetClass prov:Agent ;
+	.
+
+sh-prov-o:Entity-disjointWith-InstantaneousEvent-shape
+	a sh:NodeShape ;
+	sh:message "prov:Entity and prov:InstantaneousEvent are disjoint classes."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class prov:InstantaneousEvent ;
+	] ;
+	sh:targetClass prov:Entity ;
+	.
+
 sh-prov-o:agent-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Agent ;
@@ -41,46 +81,6 @@ sh-prov-o:entity-subjects-shape
 	a sh:NodeShape ;
 	sh:class prov:EntityInfluence ;
 	sh:targetSubjectsOf prov:entity ;
-	.
-
-sh-prov-o:prov-Activity-disjointWith-prov-Entity-shape
-	a sh:NodeShape ;
-	sh:message "prov:Activity and prov:Entity are disjoint classes."@en ;
-	sh:not [
-		a sh:NodeShape ;
-		sh:class prov:Entity ;
-	] ;
-	sh:targetClass prov:Activity ;
-	.
-
-sh-prov-o:prov-ActivityInfluence-disjointWith-prov-EntityInfluence-shape
-	a sh:NodeShape ;
-	sh:message "prov:ActivityInfluence and prov:EntityInfluence are disjoint classes."@en ;
-	sh:not [
-		a sh:NodeShape ;
-		sh:class prov:EntityInfluence ;
-	] ;
-	sh:targetClass prov:ActivityInfluence ;
-	.
-
-sh-prov-o:prov-Agent-disjointWith-prov-InstantaneousEvent-shape
-	a sh:NodeShape ;
-	sh:message "prov:Agent and prov:InstantaneousEvent are disjoint classes."@en ;
-	sh:not [
-		a sh:NodeShape ;
-		sh:class prov:InstantaneousEvent ;
-	] ;
-	sh:targetClass prov:Agent ;
-	.
-
-sh-prov-o:prov-Entity-disjointWith-prov-InstantaneousEvent-shape
-	a sh:NodeShape ;
-	sh:message "prov:Entity and prov:InstantaneousEvent are disjoint classes."@en ;
-	sh:not [
-		a sh:NodeShape ;
-		sh:class prov:InstantaneousEvent ;
-	] ;
-	sh:targetClass prov:Entity ;
 	.
 
 sh-prov-o:qualifiedEnd-objects-shape
