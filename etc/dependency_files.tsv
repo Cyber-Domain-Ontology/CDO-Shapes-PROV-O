@@ -1,4 +1,4 @@
-http://example.org/shapes/sh-prov	${top_srcdir}/shapes/sh-prov.ttl
+http://example.org/shapes/sh-prov-o	${top_srcdir}/shapes/sh-prov-o.ttl
 http://www.w3.org/ns/prov#	${top_srcdir}/dependencies/prov-o-dl.ttl
 http://www.w3.org/ns/prov-o#	${top_srcdir}/dependencies/prov-o-dl.ttl
 https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/main/dependencies/prov-o-dl.ttl	${top_srcdir}/dependencies/prov-o-dl.ttl

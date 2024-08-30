@@ -1,4 +1,4 @@
-# imports: http://example.org/shapes/sh-prov
+# imports: http://example.org/shapes/sh-prov-o
 
 @prefix drafting: <http://example.org/ontology/drafting/> .
 @prefix kb: <http://example.org/kb/> .
@@ -11,7 +11,7 @@
 <http://example.org/kb>
 	a owl:Ontology ;
 	rdfs:comment "This knowledge base instantiates each of the shape-reviewed classes and properties, so SHACL shapes can be exercised for the reviewed ontology."@en ;
-	owl:imports <http://example.org/shapes/sh-prov> ;
+	owl:imports <http://example.org/shapes/sh-prov-o> ;
 	.
 
 kb:Activity-259084ee-1443-413a-be5e-19258700c938

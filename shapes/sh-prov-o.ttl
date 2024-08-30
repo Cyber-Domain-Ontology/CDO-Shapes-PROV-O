@@ -6,11 +6,11 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix sh-prov: <http://example.org/shapes/sh-prov/> .
+@prefix sh-prov-o: <http://example.org/shapes/sh-prov-o/> .
 @prefix uco-owl: <https://ontology.unifiedcyberontology.org/owl/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://example.org/shapes/sh-prov>
+<http://example.org/shapes/sh-prov-o>
 	a owl:Ontology ;
 	rdfs:comment "This shapes file should be filled in for classes and properties of interest when the upstream ontology does not provide SHACL shapes."@en ;
 	owl:imports
@@ -19,7 +19,7 @@
 		;
 	.
 
-sh-prov:prov-Activity-disjointWith-prov-Entity-shape
+sh-prov-o:prov-Activity-disjointWith-prov-Entity-shape
 	a sh:NodeShape ;
 	sh:message "prov:Activity and prov:Entity are disjoint classes."@en ;
 	sh:not [
@@ -29,7 +29,7 @@ sh-prov:prov-Activity-disjointWith-prov-Entity-shape
 	sh:targetClass prov:Activity ;
 	.
 
-sh-prov:prov-ActivityInfluence-disjointWith-prov-EntityInfluence-shape
+sh-prov-o:prov-ActivityInfluence-disjointWith-prov-EntityInfluence-shape
 	a sh:NodeShape ;
 	sh:message "prov:ActivityInfluence and prov:EntityInfluence are disjoint classes."@en ;
 	sh:not [
@@ -39,7 +39,7 @@ sh-prov:prov-ActivityInfluence-disjointWith-prov-EntityInfluence-shape
 	sh:targetClass prov:ActivityInfluence ;
 	.
 
-sh-prov:prov-Agent-disjointWith-prov-InstantaneousEvent-shape
+sh-prov-o:prov-Agent-disjointWith-prov-InstantaneousEvent-shape
 	a sh:NodeShape ;
 	sh:message "prov:Agent and prov:InstantaneousEvent are disjoint classes."@en ;
 	sh:not [
@@ -49,7 +49,7 @@ sh-prov:prov-Agent-disjointWith-prov-InstantaneousEvent-shape
 	sh:targetClass prov:Agent ;
 	.
 
-sh-prov:prov-Entity-disjointWith-prov-InstantaneousEvent-shape
+sh-prov-o:prov-Entity-disjointWith-prov-InstantaneousEvent-shape
 	a sh:NodeShape ;
 	sh:message "prov:Entity and prov:InstantaneousEvent are disjoint classes."@en ;
 	sh:not [
