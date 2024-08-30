@@ -133,6 +133,25 @@ sh-prov-o:EntityInfluence-shape
 	sh:targetClass prov:EntityInfluence ;
 	.
 
+sh-prov-o:Influence-shape
+	a sh:NodeShape ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:description "This shape implements a more open-ended subclass review than the enumeration in PROV-O of ActivityInfluence, AgentInfluence, EntityInfluence, and their most-specified subclasses."@en ;
+		sh:hasValue prov:Influence ;
+		sh:message "It is not recommended that the type Influence be asserted without also asserting one of its more specific subclasses (e.g., a subclass of ActivityInfluence, AgentInfluence, EntityInfluence)."@en ;
+		sh:minCount "1"^^xsd:integer ;
+		sh:path (
+			rdf:type
+			[
+				sh:oneOrMorePath rdfs:subClassOf ;
+			]
+		) ;
+		sh:severity sh:Warning ;
+	] ;
+	sh:targetClass prov:Influence ;
+	.
+
 sh-prov-o:actedOnBehalfOf-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Agent ;
