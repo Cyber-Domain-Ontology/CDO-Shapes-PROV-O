@@ -2,5 +2,5 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
     <uri id="User Entered Import Resolution" uri="../dependencies/UCO/ontology/owl/owl.ttl" name="https://ontology.unifiedcyberontology.org/owl/1.3.0"/>
     <uri id="User Entered Import Resolution" uri="../dependencies/prov-o-dl.ttl" name="https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/main/dependencies/prov-o-dl.ttl"/>
-    <uri id="User Entered Import Resolution" uri="sh-prov.ttl" name="http://example.org/shapes/sh-prov"/>
+    <uri id="User Entered Import Resolution" uri="sh-prov-o.ttl" name="http://example.org/shapes/sh-prov-o"/>
 </catalog>
