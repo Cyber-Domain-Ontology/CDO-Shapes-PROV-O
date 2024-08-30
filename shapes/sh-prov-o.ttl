@@ -864,3 +864,15 @@ sh-prov-o:wasStartedBy-subjects-shape
 	sh:targetSubjectsOf prov:wasStartedBy ;
 	.
 
+<http://www.w3.org/ns/prov-o>
+	a prov:Entity ;
+	.
+
+<http://www.w3.org/ns/prov-o#>
+	a prov:Entity ;
+	.
+
+<http://www.w3.org/ns/prov-o-20130430>
+	a prov:Entity ;
+	.
+

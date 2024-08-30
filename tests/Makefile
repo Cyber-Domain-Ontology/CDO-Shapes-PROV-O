@@ -94,4 +94,8 @@ monolithic.ttl: \
 	  && pyshacl \
 	    --shacl $(uco_srcdir)/ontology/owl/owl.ttl \
 	    _$@
+	source $(top_srcdir)/venv/bin/activate \
+	  && pyshacl \
+	    --shacl _$@ \
+	    _$@
 	mv _$@ $@
