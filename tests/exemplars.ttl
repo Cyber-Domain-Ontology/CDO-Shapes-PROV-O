@@ -134,6 +134,10 @@ kb:Activity-fe9bb476-30f2-4529-913b-f4b4bc05e7d6
 	prov:used kb:Entity-fcb4ebbb-0e0c-4fc8-b9b9-e49b40aa9a67 ;
 	.
 
+kb:Agent-04d88a23-7bdf-4871-bff2-15146bc86a60
+	a prov:Agent ;
+	.
+
 kb:Agent-18bf466c-cdd9-44f3-baf7-b4b07fd09108
 	a prov:Agent ;
 	.
@@ -146,6 +150,10 @@ kb:Agent-4cfffba0-49fd-4bd1-a394-080eab9bc9e6
 	a prov:Agent ;
 	.
 
+kb:Agent-574c5e77-6115-4cd3-a23d-383822297327
+	a prov:Agent ;
+	.
+
 kb:Agent-632af3ab-40de-4a56-99dc-53fe7ba59152
 	a prov:Agent ;
 	.
@@ -153,6 +161,10 @@ kb:Agent-632af3ab-40de-4a56-99dc-53fe7ba59152
 kb:Agent-66d6b439-4ec4-4aaf-a900-854774536854
 	a prov:Agent ;
 	prov:atLocation kb:Location-b7e65ef4-43cd-4a53-8846-296cc08e98b1 ;
+	.
+
+kb:Agent-7034a8cd-0e41-4dde-8c7a-e942758a4ad1
+	a prov:Agent ;
 	.
 
 kb:Agent-77a51580-ac66-4e36-ace2-c43b5673c432
@@ -173,13 +185,27 @@ kb:Agent-a411145a-2e53-4257-b7ac-5d45ebde85f8
 	a prov:Agent ;
 	.
 
+kb:Agent-b2bfb91f-8d01-4ba6-b6d2-3eae5ada781e
+	a prov:Agent ;
+	.
+
+kb:Agent-b644388b-cdc9-4b83-8c8b-cb602348a8bb
+	a prov:Agent ;
+	.
+
+kb:Agent-d104b300-8ee5-4121-9b03-4d6648e7410a
+	a prov:Agent ;
+	.
+
 kb:Association-04eba989-1566-4ff6-ac69-10efa79de275
 	a prov:Association ;
+	prov:agent kb:Agent-7034a8cd-0e41-4dde-8c7a-e942758a4ad1 ;
 	prov:hadPlan kb:Plan-72046d3a-85f9-4f65-8e08-bcbc2087e038 ;
 	.
 
 kb:Association-1166bd60-44eb-4fef-9dfa-768c2e48c067
 	a prov:Association ;
+	prov:agent kb:Agent-b2bfb91f-8d01-4ba6-b6d2-3eae5ada781e ;
 	.
 
 kb:Association-c6e63cf0-a3a1-4698-b661-250a1477c892
@@ -189,6 +215,7 @@ kb:Association-c6e63cf0-a3a1-4698-b661-250a1477c892
 
 kb:Association-d52a7030-35ec-4490-93bc-a5996b29c033
 	a prov:Association ;
+	prov:agent kb:Agent-574c5e77-6115-4cd3-a23d-383822297327 ;
 	prov:hadRole kb:Role-254159a1-0454-41a2-905e-b718f009daf7 ;
 	.
 
@@ -199,6 +226,7 @@ kb:Attribution-dfc5046f-70f3-4699-91ba-40f33ab7f8a6
 
 kb:Attribution-efc9ce2e-45b1-464a-8de3-0da30b9e697d
 	a prov:Attribution ;
+	prov:agent kb:Agent-d104b300-8ee5-4121-9b03-4d6648e7410a ;
 	.
 
 kb:Collection-c446e934-bd1b-4415-9aa0-a315215b6fcd
@@ -221,6 +249,7 @@ kb:Communication-d3da045b-3ed7-4458-8bdc-59de3b3df288
 
 kb:Delegation-11b363d8-3a59-4b41-b6cc-3a74f25bee1a
 	a prov:Delegation ;
+	prov:agent kb:Agent-04d88a23-7bdf-4871-bff2-15146bc86a60 ;
 	prov:hadActivity kb:Activity-3a6e56f3-82bf-4845-a3e3-db2629aefcc5 ;
 	.
 
@@ -231,6 +260,7 @@ kb:Delegation-23cb2d60-1b4d-4938-bf53-e111e5f06544
 
 kb:Delegation-4360182c-2964-41e3-ac38-53f94114d312
 	a prov:Delegation ;
+	prov:agent kb:Agent-b644388b-cdc9-4b83-8c8b-cb602348a8bb ;
 	.
 
 kb:Derivation-1576da3f-8839-44e5-9f9a-36198fe1370c

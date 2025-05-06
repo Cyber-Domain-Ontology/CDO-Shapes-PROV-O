@@ -44,6 +44,12 @@ sh-prov-o:ActivityInfluence-shape
 	sh:property
 		[
 			a sh:PropertyShape ;
+			rdfs:isDefinedBy <https://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-Influence> ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path prov:activity ;
+		] ,
+		[
+			a sh:PropertyShape ;
 			sh:description "This shape implements a more open-ended subclass review than the enumeration in PROV-O of Communication, Generation, and Invalidation."@en ;
 			sh:hasValue prov:ActivityInfluence ;
 			sh:message "It is not recommended that the type ActivityInfluence be asserted without also asserting one of its more specific subclasses (e.g., Communication, Generation, Invalidation)."@en ;
@@ -55,6 +61,11 @@ sh-prov-o:ActivityInfluence-shape
 				]
 			) ;
 			sh:severity sh:Warning ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:maxCount "0"^^xsd:integer ;
+			sh:path prov:hadActivity ;
 		] ,
 		[
 			a sh:PropertyShape ;
@@ -77,20 +88,29 @@ sh-prov-o:Agent-disjointWith-InstantaneousEvent-shape
 
 sh-prov-o:AgentInfluence-shape
 	a sh:NodeShape ;
-	sh:property [
-		a sh:PropertyShape ;
-		sh:description "This shape implements a more open-ended subclass review than the enumeration in PROV-O of Assocation, Attribution, Delegation."@en ;
-		sh:hasValue prov:AgentInfluence ;
-		sh:message "It is not recommended that the type AgentInfluence be asserted without also asserting one of its more specific subclasses (e.g., Association, Attribution, Delegation)."@en ;
-		sh:minCount "1"^^xsd:integer ;
-		sh:path (
-			rdf:type
-			[
-				sh:oneOrMorePath rdfs:subClassOf ;
-			]
-		) ;
-		sh:severity sh:Warning ;
-	] ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			rdfs:isDefinedBy <https://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-Influence> ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path prov:agent ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:description "This shape implements a more open-ended subclass review than the enumeration in PROV-O of Assocation, Attribution, Delegation."@en ;
+			sh:hasValue prov:AgentInfluence ;
+			sh:message "It is not recommended that the type AgentInfluence be asserted without also asserting one of its more specific subclasses (e.g., Association, Attribution, Delegation)."@en ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path (
+				rdf:type
+				[
+					sh:oneOrMorePath rdfs:subClassOf ;
+				]
+			) ;
+			sh:severity sh:Warning ;
+		]
+		;
 	sh:targetClass prov:AgentInfluence ;
 	.
 
@@ -116,20 +136,28 @@ sh-prov-o:Entity-disjointWith-InstantaneousEvent-shape
 
 sh-prov-o:EntityInfluence-shape
 	a sh:NodeShape ;
-	sh:property [
-		a sh:PropertyShape ;
-		sh:description "This shape implements a more open-ended subclass review than the enumeration in PROV-O of Derivation, End, Start, Usage."@en ;
-		sh:hasValue prov:EntityInfluence ;
-		sh:message "It is not recommended that the type EntityInfluence be asserted without also asserting one of its more specific subclasses (e.g., Derivation, End, Start, Usage)."@en ;
-		sh:minCount "1"^^xsd:integer ;
-		sh:path (
-			rdf:type
-			[
-				sh:oneOrMorePath rdfs:subClassOf ;
-			]
-		) ;
-		sh:severity sh:Warning ;
-	] ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			rdfs:isDefinedBy <https://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-Influence> ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:path prov:entity ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:description "This shape implements a more open-ended subclass review than the enumeration in PROV-O of Derivation, End, Start, Usage."@en ;
+			sh:hasValue prov:EntityInfluence ;
+			sh:message "It is not recommended that the type EntityInfluence be asserted without also asserting one of its more specific subclasses (e.g., Derivation, End, Start, Usage)."@en ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:path (
+				rdf:type
+				[
+					sh:oneOrMorePath rdfs:subClassOf ;
+				]
+			) ;
+			sh:severity sh:Warning ;
+		]
+		;
 	sh:targetClass prov:EntityInfluence ;
 	.
 
@@ -155,6 +183,7 @@ sh-prov-o:Influence-shape
 sh-prov-o:actedOnBehalfOf-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Agent ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:actedOnBehalfOf ;
 	.
 
@@ -167,6 +196,7 @@ sh-prov-o:actedOnBehalfOf-subjects-shape
 sh-prov-o:activity-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Activity ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:activity ;
 	.
 
@@ -179,6 +209,7 @@ sh-prov-o:activity-subjects-shape
 sh-prov-o:agent-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Agent ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:agent ;
 	.
 
@@ -191,6 +222,7 @@ sh-prov-o:agent-subjects-shape
 sh-prov-o:alternateOf-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Entity ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:alternateOf ;
 	.
 
@@ -203,6 +235,7 @@ sh-prov-o:alternateOf-subjects-shape
 sh-prov-o:atLocation-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Location ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:atLocation ;
 	.
 
@@ -232,6 +265,7 @@ sh-prov-o:atLocation-subjects-shape
 sh-prov-o:atTime-objects-shape
 	a sh:NodeShape ;
 	sh:datatype xsd:dateTime ;
+	sh:nodeKind sh:Literal ;
 	sh:targetObjectsOf prov:atTime ;
 	.
 
@@ -241,9 +275,52 @@ sh-prov-o:atTime-subjects-shape
 	sh:targetSubjectsOf prov:atTime ;
 	.
 
+sh-prov-o:category-shape
+	a sh:NodeShape ;
+	rdfs:comment "This property has no implemented restrictions."@en ;
+	sh:targetSubjectsOf prov:category ;
+	.
+
+sh-prov-o:component-shape
+	a sh:NodeShape ;
+	rdfs:comment "This property has no implemented restrictions."@en ;
+	sh:targetSubjectsOf prov:component ;
+	.
+
+sh-prov-o:constraints-shape
+	a sh:NodeShape ;
+	rdfs:comment "This property has no implemented restrictions."@en ;
+	sh:targetSubjectsOf prov:constraints ;
+	.
+
+sh-prov-o:definition-shape
+	a sh:NodeShape ;
+	rdfs:comment "This property has no implemented restrictions."@en ;
+	sh:targetSubjectsOf prov:definition ;
+	.
+
+sh-prov-o:dm-shape
+	a sh:NodeShape ;
+	rdfs:comment "This property has no implemented restrictions."@en ;
+	sh:targetSubjectsOf prov:dm ;
+	.
+
+sh-prov-o:editorialNote-shape
+	a sh:NodeShape ;
+	rdfs:comment "This property has no implemented restrictions."@en ;
+	sh:targetSubjectsOf prov:editorialNote ;
+	.
+
+sh-prov-o:editorsDefinition-shape
+	a sh:NodeShape ;
+	rdfs:comment "This property has no implemented restrictions."@en ;
+	sh:targetSubjectsOf prov:editorsDefinition ;
+	.
+
 sh-prov-o:endedAtTime-objects-shape
 	a sh:NodeShape ;
 	sh:datatype xsd:dateTime ;
+	sh:nodeKind sh:Literal ;
 	sh:targetObjectsOf prov:endedAtTime ;
 	.
 
@@ -256,6 +333,7 @@ sh-prov-o:endedAtTime-subjects-shape
 sh-prov-o:entity-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Entity ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:entity ;
 	.
 
@@ -268,6 +346,7 @@ sh-prov-o:entity-subjects-shape
 sh-prov-o:generated-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Entity ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:generated ;
 	.
 
@@ -280,6 +359,7 @@ sh-prov-o:generated-subjects-shape
 sh-prov-o:generatedAtTime-objects-shape
 	a sh:NodeShape ;
 	sh:datatype xsd:dateTime ;
+	sh:nodeKind sh:Literal ;
 	sh:targetObjectsOf prov:generatedAtTime ;
 	.
 
@@ -292,6 +372,7 @@ sh-prov-o:generatedAtTime-subjects-shape
 sh-prov-o:hadActivity-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Activity ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:hadActivity ;
 	.
 
@@ -322,6 +403,7 @@ sh-prov-o:hadActivity-subjects-shape
 sh-prov-o:hadGeneration-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Generation ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:hadGeneration ;
 	.
 
@@ -334,6 +416,7 @@ sh-prov-o:hadGeneration-subjects-shape
 sh-prov-o:hadMember-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Entity ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:hadMember ;
 	.
 
@@ -346,6 +429,7 @@ sh-prov-o:hadMember-subjects-shape
 sh-prov-o:hadPlan-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Plan ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:hadPlan ;
 	.
 
@@ -358,6 +442,7 @@ sh-prov-o:hadPlan-subjects-shape
 sh-prov-o:hadPrimarySource-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Entity ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:hadPrimarySource ;
 	.
 
@@ -370,6 +455,7 @@ sh-prov-o:hadPrimarySource-subjects-shape
 sh-prov-o:hadRole-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Role ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:hadRole ;
 	.
 
@@ -392,6 +478,7 @@ sh-prov-o:hadRole-subjects-shape
 sh-prov-o:hadUsage-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Usage ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:hadUsage ;
 	.
 
@@ -403,6 +490,7 @@ sh-prov-o:hadUsage-subjects-shape
 
 sh-prov-o:influenced-objects-shape
 	a sh:NodeShape ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:or (
 		[
 			a sh:NodeShape ;
@@ -455,6 +543,7 @@ sh-prov-o:influencer-subjects-shape
 sh-prov-o:invalidated-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Entity ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:invalidated ;
 	.
 
@@ -467,6 +556,7 @@ sh-prov-o:invalidated-subjects-shape
 sh-prov-o:invalidatedAtTime-objects-shape
 	a sh:NodeShape ;
 	sh:datatype xsd:dateTime ;
+	sh:nodeKind sh:Literal ;
 	sh:targetObjectsOf prov:invalidatedAtTime ;
 	.
 
@@ -476,9 +566,22 @@ sh-prov-o:invalidatedAtTime-subjects-shape
 	sh:targetSubjectsOf prov:invalidatedAtTime ;
 	.
 
+sh-prov-o:inverse-shape
+	a sh:NodeShape ;
+	rdfs:comment "This property has no implemented restrictions."@en ;
+	sh:targetSubjectsOf prov:inverse ;
+	.
+
+sh-prov-o:n-shape
+	a sh:NodeShape ;
+	rdfs:comment "This property has no implemented restrictions."@en ;
+	sh:targetSubjectsOf prov:n ;
+	.
+
 sh-prov-o:qualifiedAssociation-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Association ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:qualifiedAssociation ;
 	.
 
@@ -491,6 +594,7 @@ sh-prov-o:qualifiedAssociation-subjects-shape
 sh-prov-o:qualifiedAttribution-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Attribution ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:qualifiedAttribution ;
 	.
 
@@ -503,6 +607,7 @@ sh-prov-o:qualifiedAttribution-subjects-shape
 sh-prov-o:qualifiedCommunication-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Communication ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:qualifiedCommunication ;
 	.
 
@@ -515,6 +620,7 @@ sh-prov-o:qualifiedCommunication-subjects-shape
 sh-prov-o:qualifiedDelegation-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Delegation ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:qualifiedDelegation ;
 	.
 
@@ -527,6 +633,7 @@ sh-prov-o:qualifiedDelegation-subjects-shape
 sh-prov-o:qualifiedDerivation-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Derivation ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:qualifiedDerivation ;
 	.
 
@@ -539,6 +646,7 @@ sh-prov-o:qualifiedDerivation-subjects-shape
 sh-prov-o:qualifiedEnd-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:End ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:qualifiedEnd ;
 	.
 
@@ -548,9 +656,16 @@ sh-prov-o:qualifiedEnd-subjects-shape
 	sh:targetSubjectsOf prov:qualifiedEnd ;
 	.
 
+sh-prov-o:qualifiedForm-shape
+	a sh:NodeShape ;
+	rdfs:comment "This property has no implemented restrictions."@en ;
+	sh:targetSubjectsOf prov:qualifiedForm ;
+	.
+
 sh-prov-o:qualifiedGeneration-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Generation ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:qualifiedGeneration ;
 	.
 
@@ -563,6 +678,7 @@ sh-prov-o:qualifiedGeneration-subjects-shape
 sh-prov-o:qualifiedInfluence-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Influence ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:qualifiedInfluence ;
 	.
 
@@ -588,6 +704,7 @@ sh-prov-o:qualifiedInfluence-subjects-shape
 sh-prov-o:qualifiedInvalidation-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Invalidation ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:qualifiedInvalidation ;
 	.
 
@@ -600,6 +717,7 @@ sh-prov-o:qualifiedInvalidation-subjects-shape
 sh-prov-o:qualifiedPrimarySource-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:PrimarySource ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:qualifiedPrimarySource ;
 	.
 
@@ -612,6 +730,7 @@ sh-prov-o:qualifiedPrimarySource-subjects-shape
 sh-prov-o:qualifiedQuotation-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Quotation ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:qualifiedQuotation ;
 	.
 
@@ -624,6 +743,7 @@ sh-prov-o:qualifiedQuotation-subjects-shape
 sh-prov-o:qualifiedRevision-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Revision ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:qualifiedRevision ;
 	.
 
@@ -636,6 +756,7 @@ sh-prov-o:qualifiedRevision-subjects-shape
 sh-prov-o:qualifiedStart-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Start ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:qualifiedStart ;
 	.
 
@@ -648,6 +769,7 @@ sh-prov-o:qualifiedStart-subjects-shape
 sh-prov-o:qualifiedUsage-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Usage ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:qualifiedUsage ;
 	.
 
@@ -657,9 +779,16 @@ sh-prov-o:qualifiedUsage-subjects-shape
 	sh:targetSubjectsOf prov:qualifiedUsage ;
 	.
 
+sh-prov-o:sharesDefinitionWith-shape
+	a sh:NodeShape ;
+	rdfs:comment "This property has no implemented restrictions."@en ;
+	sh:targetSubjectsOf prov:sharesDefinitionWith ;
+	.
+
 sh-prov-o:specializationOf-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Entity ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:specializationOf ;
 	.
 
@@ -672,6 +801,7 @@ sh-prov-o:specializationOf-subjects-shape
 sh-prov-o:startedAtTime-objects-shape
 	a sh:NodeShape ;
 	sh:datatype xsd:dateTime ;
+	sh:nodeKind sh:Literal ;
 	sh:targetObjectsOf prov:startedAtTime ;
 	.
 
@@ -681,9 +811,16 @@ sh-prov-o:startedAtTime-subjects-shape
 	sh:targetSubjectsOf prov:startedAtTime ;
 	.
 
+sh-prov-o:unqualifiedForm-shape
+	a sh:NodeShape ;
+	rdfs:comment "This property has no implemented restrictions."@en ;
+	sh:targetSubjectsOf prov:unqualifiedForm ;
+	.
+
 sh-prov-o:used-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Entity ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:used ;
 	.
 
@@ -708,6 +845,7 @@ sh-prov-o:value-subjects-shape
 sh-prov-o:wasAssociatedWith-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Agent ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:wasAssociatedWith ;
 	.
 
@@ -720,6 +858,7 @@ sh-prov-o:wasAssociatedWith-subjects-shape
 sh-prov-o:wasAttributedTo-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Agent ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:wasAttributedTo ;
 	.
 
@@ -732,6 +871,7 @@ sh-prov-o:wasAttributedTo-subjects-shape
 sh-prov-o:wasDerivedFrom-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Entity ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:wasDerivedFrom ;
 	.
 
@@ -744,6 +884,7 @@ sh-prov-o:wasDerivedFrom-subjects-shape
 sh-prov-o:wasEndedBy-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Entity ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:wasEndedBy ;
 	.
 
@@ -756,6 +897,7 @@ sh-prov-o:wasEndedBy-subjects-shape
 sh-prov-o:wasGeneratedBy-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Activity ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:wasGeneratedBy ;
 	.
 
@@ -767,6 +909,7 @@ sh-prov-o:wasGeneratedBy-subjects-shape
 
 sh-prov-o:wasInfluencedBy-objects-shape
 	a sh:NodeShape ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:or (
 		[
 			a sh:NodeShape ;
@@ -807,6 +950,7 @@ sh-prov-o:wasInfluencedBy-subjects-shape
 sh-prov-o:wasInformedBy-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Activity ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:wasInformedBy ;
 	.
 
@@ -819,6 +963,7 @@ sh-prov-o:wasInformedBy-subjects-shape
 sh-prov-o:wasInvalidatedBy-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Activity ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:wasInvalidatedBy ;
 	.
 
@@ -831,6 +976,7 @@ sh-prov-o:wasInvalidatedBy-subjects-shape
 sh-prov-o:wasQuotedFrom-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Entity ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:wasQuotedFrom ;
 	.
 
@@ -843,6 +989,7 @@ sh-prov-o:wasQuotedFrom-subjects-shape
 sh-prov-o:wasRevisionOf-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Entity ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:wasRevisionOf ;
 	.
 
@@ -855,6 +1002,7 @@ sh-prov-o:wasRevisionOf-subjects-shape
 sh-prov-o:wasStartedBy-objects-shape
 	a sh:NodeShape ;
 	sh:class prov:Entity ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf prov:wasStartedBy ;
 	.
 
@@ -876,6 +1024,10 @@ sh-prov-o:wasStartedBy-subjects-shape
 		owl:NamedIndividual ,
 		prov:Entity
 		;
+	.
+
+<http://www.w3.org/ns/prov-o-20130312>
+	a prov:Entity ;
 	.
 
 <http://www.w3.org/ns/prov-o-20130430>
