@@ -1,4 +1,4 @@
-# imports: https://ontology.unifiedcyberontology.org/owl/1.3.0
+# imports: https://ontology.unifiedcyberontology.org/owl/1.4.0
 # imports: https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/main/dependencies/prov-o-dl.ttl
 
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -14,7 +14,7 @@
 	a owl:Ontology ;
 	rdfs:comment "This shapes file should be filled in for classes and properties of interest when the upstream ontology does not provide SHACL shapes."@en ;
 	owl:imports
-		uco-owl:1.3.0 ,
+		uco-owl:1.4.0 ,
 		<https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/main/dependencies/prov-o-dl.ttl>
 		;
 	.
