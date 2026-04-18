@@ -22,6 +22,14 @@ uco_srcdir := $(top_srcdir)/dependencies/UCO
 
 RDF_TOOLKIT_JAR := $(uco_srcdir)/lib/rdf-toolkit.jar
 
+# TODO: This variable lists files for Make to generate and delete on
+# 'make clean' calls.  This variable should be adapted to list each file
+# to normalize.
+# Note that to support the catalog-v001.xml preconditions, this list
+# must only be files in this directory.
+normalized_ttls := \
+  formatted-prov-o.ttl
+
 all: \
   catalog-v001.xml \
   .prov-o-rl.ttl.dl.done.log
@@ -51,12 +59,15 @@ $(RDF_TOOLKIT_JAR):
 	    $<
 	touch $@
 
+# This recipe intentionally depends on normalized_ttls without using
+# them, due to using only a subgraph of prov-o.ttl downstream.
 catalog-v001.xml: \
+  $(normalized_ttls) \
   $(top_srcdir)/.venv.done.log \
   $(top_srcdir)/etc/domain_directories.tsv \
   $(top_srcdir)/etc/dependency_files.tsv \
   $(top_srcdir)/src/create-catalog-v001.xml.py \
-  imports-transitive.ttl
+  .prov-o-dl.ttl.dl.done.log
 	rm -f _$@
 	source $(top_srcdir)/venv/bin/activate \
 	  && python3 $(top_srcdir)/src/create-catalog-v001.xml.py \
@@ -64,38 +75,19 @@ catalog-v001.xml: \
 	    $(top_srcdir)/etc/domain_directories.tsv \
 	    $(top_srcdir)/etc/dependency_files.tsv \
 	    "$(top_srcdir)" \
-	    imports-transitive.ttl
+	    prov-o-dl.ttl
 	mv _$@ $@
 
 check: \
-  catalog-v001.xml
+  all
 
 clean:
 	@rm -f \
+	  $(normalized_ttls) \
 	  .*.done.log \
-	  catalog-v001.xml \
-	  imports-transitive.ttl \
-	  prov-o.ttl
+	  catalog-v001.xml
 
-# This recipe intentionally does not incorporate CDO ontologies (UCO,
-# CASE, etc.), to avoid redundant imports between multiple profiles.
-imports-transitive.ttl: \
-  .prov-o-dl.ttl.dl.done.log
-	source $(top_srcdir)/venv/bin/activate \
-	  && rdfpipe \
-	    --output-format turtle \
-	    prov-o-dl.ttl \
-	    > __$@
-	java -jar $(RDF_TOOLKIT_JAR) \
-	  --inline-blank-nodes \
-	  --source __$@ \
-	  --source-format turtle \
-	  --target _$@ \
-	  --target-format turtle
-	rm __$@
-	mv _$@ $@
-
-prov-o.ttl: \
+formatted-prov-o.ttl: \
   $(RDF_TOOLKIT_JAR) \
   $(top_srcdir)/.venv.done.log
 	rm -f __$@ _$@

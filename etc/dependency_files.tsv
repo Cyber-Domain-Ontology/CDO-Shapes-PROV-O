@@ -1,3 +1,4 @@
+http://example.org/ontology/cdo-prov-o	${top_srcdir}/ontology/cdo-prov-o.ttl
 http://example.org/shapes/sh-prov-o	${top_srcdir}/shapes/sh-prov-o.ttl
 http://www.w3.org/ns/prov#	${top_srcdir}/dependencies/prov-o-dl.ttl
 http://www.w3.org/ns/prov-o#	${top_srcdir}/dependencies/prov-o-dl.ttl

@@ -1,5 +1,5 @@
+# imports: http://example.org/ontology/cdo-prov-o
 # imports: https://ontology.unifiedcyberontology.org/owl/1.4.0
-# imports: https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/main/dependencies/prov-o-dl.ttl
 
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -14,8 +14,8 @@
 	a owl:Ontology ;
 	rdfs:comment "This shapes file should be filled in for classes and properties of interest when the upstream ontology does not provide SHACL shapes."@en ;
 	owl:imports
-		uco-owl:1.4.0 ,
-		<https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/main/dependencies/prov-o-dl.ttl>
+		<http://example.org/ontology/cdo-prov-o> ,
+		uco-owl:1.4.0
 		;
 	.
 
@@ -1010,30 +1010,5 @@ sh-prov-o:wasStartedBy-subjects-shape
 	a sh:NodeShape ;
 	sh:class prov:Activity ;
 	sh:targetSubjectsOf prov:wasStartedBy ;
-	.
-
-<http://www.w3.org/ns/prov-o>
-	a
-		owl:NamedIndividual ,
-		prov:Entity
-		;
-	.
-
-<http://www.w3.org/ns/prov-o#>
-	a
-		owl:NamedIndividual ,
-		prov:Entity
-		;
-	.
-
-<http://www.w3.org/ns/prov-o-20130312>
-	a prov:Entity ;
-	.
-
-<http://www.w3.org/ns/prov-o-20130430>
-	a
-		owl:NamedIndividual ,
-		prov:Entity
-		;
 	.
 
